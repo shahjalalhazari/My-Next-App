@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <main>
+    <div>
       <h1>Home Page</h1>
-    </main>
+    </div>
   );
 }
 
