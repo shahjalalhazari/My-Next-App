@@ -4,12 +4,12 @@ export const metadata = {
 };
 
 const DashboardLayout = ({children}) => {
-    return (
-        <div>
-            <div>Sidebar</div>
-            {children}
-        </div>
-    );
+  return (
+    <div>
+      <div>Sidebar</div>
+      {children}
+    </div>
+  );
 };
 
 export default DashboardLayout

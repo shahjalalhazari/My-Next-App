@@ -4,11 +4,11 @@ export const metadata = {
 };
 
 const ManageProductPage = () => {
-    return (
-        <div>
-            Manage all the products from here.
-        </div>
-    );
+  return (
+    <div>
+      Manage all the products from here.
+    </div>
+  );
 };
 
 export default ManageProductPage;
