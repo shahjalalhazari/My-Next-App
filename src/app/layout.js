@@ -12,16 +12,9 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <li>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/blogs">Blogs</a>
-            <a href="/dashboard">Dashboard</a>
-          </li>
-        </nav>
+        
         {children}
-        <footer>Footer</footer></body>
+        </body>
     </html>
   );
 }
