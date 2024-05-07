@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SingleBlogPage = ({params}) => {
-  console.log(params.segments);
   const [year, month, date, id] = params.segments || [];
 
   return (
