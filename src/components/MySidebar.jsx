@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavLink from "./NavLink";
 
 const navLinks = [
   {
@@ -26,7 +27,7 @@ const MySidebar = () => {
       <ul>
         {navLinks.map(({ path, title }) => (
           <li key={path}>
-            <Link href={path}>{title}</Link>
+            <NavLink activeClassName="text-red-500 font-bold" exact href={path}>{title}</NavLink>
           </li>
         ))}
       </ul>
