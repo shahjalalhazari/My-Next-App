@@ -22,7 +22,7 @@ const HomePage = () => {
       <Image
         src="/sky.jpg"
         placeholder="blur"
-        blurDataURL="" // place blur image data after generate it.
+        blurDataURL=" " // place blur image data after generate it.
         alt="sky"
         width={640}
         height={5000}
