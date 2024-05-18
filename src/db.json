@@ -1,0 +1,116 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Electronics",
+            "imageUrl": "http://example.com/electronics.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Clothing",
+            "imageUrl": "http://example.com/electronics.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Books",
+            "imageUrl": "http://example.com/electronics.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Stationary",
+            "imageUrl": "http://example.com/electronics.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Home Decor",
+            "imageUrl": "http://example.com/electronics.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Sports",
+            "imageUrl": "http://example.com/electronics.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Beauty",
+            "imageUrl": "http://example.com/electronics.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Toys",
+            "imageUrl": "http://example.com/electronics.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Kitchenware",
+            "imageUrl": "http://example.com/electronics.jpg"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Iphone 15 Pro Max",
+            "price": 999,
+            "category": "Electronics",
+            "features": [
+                "A14 Bionic chip",
+                "Super retina XDR display",
+                "Dual-Camera",
+                "4200mph Battery"
+            ],
+            "imageUrl": "http://example.com/iphone15promax.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Iphone 15 Pro",
+            "price": 899,
+            "category": "Electronics",
+            "features": [
+                "A14 Bionic chip",
+                "Super retina XDR display",
+                "Dual-Camera",
+                "4200mph Battery"
+            ],
+            "imageUrl": "http://example.com/iphone15pro.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Iphone 15",
+            "price": 859,
+            "category": "Electronics",
+            "features": [
+                "A14 Bionic chip",
+                "Super retina XDR display",
+                "Dual-Camera",
+                "4200mph Battery"
+            ],
+            "imageUrl": "http://example.com/iphone15.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Samsung Galaxy S24 Ultra",
+            "price": 949,
+            "category": "Electronics",
+            "features": [
+                "Exynos 2100 chip",
+                "Dynamic AMOLED 2X display",
+                "Triple-Camera",
+                "5000mph Battery"
+            ],
+            "imageUrl": "http://example.com/s24ultra.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Samsung Galaxy S24",
+            "price": 949,
+            "category": "Electronics",
+            "features": [
+                "Exynos 2100 chip",
+                "Dynamic AMOLED 2X display",
+                "Triple-Camera",
+                "5000mph Battery"
+            ],
+            "imageUrl": "http://example.com/s24.jpg"
+        }
+    ]
+}
