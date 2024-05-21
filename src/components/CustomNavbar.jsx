@@ -26,7 +26,7 @@ const navLinks = [
 
 const CustomNavbar = () => {
   return (
-    <nav className="container flex items-center justify-between mx-auto">
+    <nav className="mx-40 flex items-center justify-between">
       <h3 className="text-2xl font-semibold">My Next App</h3>
       <ul className="flex items-center justify-center">
         {navLinks.map(({ path, title }) => (
