@@ -2,13 +2,25 @@ import Image from "next/image";
 import image1 from "@/assets/beach.jpg";
 import image2 from "@/assets/flower.jpg";
 import Categories from "@/components/HomePage/Categories";
+import PopularProducts from "@/components/HomePage/PopularProducts";
+import { Suspense } from "react";
 
 const HomePage = () => {
   return (
     <div className="mx-40 mt-10">
       <h1 className="text-3xl">Home Page</h1>
 
-      <Categories/>
+      <Categories />
+
+      <Suspense 
+        fallback={
+          <h1 className='text-center font-semibold text-2xl'>
+            Loading...
+          </h1>
+        }
+      >
+        <PopularProducts/>
+      </Suspense>
 
       {/* use image from static folder */}
       {/* <Image
