@@ -1,6 +1,6 @@
 import { forwardRef, useRef } from "react";
 
-const Modal = ({ closeModal, updateData }, ref) => {
+const Modal = ({ closeModal, updateData, handleUpdateDetails }, ref) => {
   const formRef = useRef(null);
 
   return (
@@ -22,7 +22,7 @@ const Modal = ({ closeModal, updateData }, ref) => {
       <div className="modal-box">
         <h3 className="font-bold text-xl mb-4">Update Product Details!</h3>
 
-        <form ref={formRef}>
+        <form ref={formRef} onSubmit={handleUpdateDetails}>
           <input
             type="text"
             name="title"
@@ -44,7 +44,7 @@ const Modal = ({ closeModal, updateData }, ref) => {
             className="w-full mb-2 p-2 focus:outline-none border"
             defaultValue={updateData?.category}
           />
-          <button className="text-white px-2 py-1 bg-blue-500 mt-4 rounded-md px-3 py-2">
+          <button className="text-white bg-blue-500 mt-4 rounded-md px-3 py-2">
             Update
           </button>
         </form>

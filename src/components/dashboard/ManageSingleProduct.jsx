@@ -6,7 +6,7 @@ const ManageSingleProduct = ({ product, openModal }) => {
   return (
     <tr>
       <td className="border border-slate-700">{name}</td>
-      <td className="border border-slate-700">{price.toFixed(2)}</td>
+      <td className="border border-slate-700">{price}</td>
       <td className="border border-slate-700">{category}</td>
       <td className="border border-slate-700">
         <button onClick={() => openModal(product)} className="btn-lg bg-blue-500 text-white font-medium px-3 py-2 rounded mr-5">
