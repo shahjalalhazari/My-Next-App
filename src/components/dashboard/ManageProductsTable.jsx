@@ -15,16 +15,19 @@ const ManageProductsTable = ({ products }) => {
 
   const isLoading = isPending || loading;
 
+  // Open Modal
   const openModal = (product) => {
     setUpdateData(product);
     modalRef.current.showModal();
   };
 
+  // Close Modal
   const closeModal = () => {
     setUpdateData(null);
     modalRef.current.close();
   };
 
+  // Update Product Details
   const handleUpdateDetails = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -58,6 +61,22 @@ const ManageProductsTable = ({ products }) => {
     }
   };
 
+  // Delete Product
+  const handleDeleteProduct = async (id) => {
+    try {
+      const res = await fetch(`http://localhost:5000/products/${id}`, {
+        method: "DELETE",
+      });
+      const result = await res.json();
+      console.log(result);
+      startTransition(() => {
+        router.refresh();
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <table
@@ -79,6 +98,7 @@ const ManageProductsTable = ({ products }) => {
               key={product.id}
               product={product}
               openModal={openModal}
+              handleDeleteProduct={handleDeleteProduct}
             />
           ))}
         </tbody>

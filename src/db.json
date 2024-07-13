@@ -102,20 +102,6 @@
       ],
       "imageUrl": "http://example.com/s24ultra.jpg",
       "title": "Samsung Galaxy S24 Ultra"
-    },
-    {
-      "id": "5",
-      "name": "Samsung Galaxy S24",
-      "price": "960",
-      "category": "Electronics",
-      "features": [
-        "Exynos 2100 chip",
-        "Dynamic AMOLED 2X display",
-        "Triple-Camera",
-        "5000mph Battery"
-      ],
-      "imageUrl": "http://example.com/s24.jpg",
-      "title": "Samsung Galaxy S24"
     }
   ]
 }
