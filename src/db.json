@@ -50,7 +50,7 @@
     {
       "id": "1",
       "name": "Iphone 15 Pro Max",
-      "price": "999",
+      "price": "1004",
       "category": "Electronics",
       "features": [
         "A14 Bionic chip",
@@ -64,7 +64,7 @@
     {
       "id": "2",
       "name": "Iphone 15 Pro",
-      "price": "931",
+      "price": "955",
       "category": "Electronics",
       "features": [
         "A14 Bionic chip",
@@ -78,7 +78,7 @@
     {
       "id": "3",
       "name": "Iphone 15",
-      "price": "872",
+      "price": "880",
       "category": "Electronics",
       "features": [
         "A14 Bionic chip",

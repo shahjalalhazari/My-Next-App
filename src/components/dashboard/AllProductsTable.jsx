@@ -1,19 +1,16 @@
 "use client";
 
-import { useRef, useState, useTransition } from "react";
-import ManageSingleProduct from "./ManageSingleProduct";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import ManageSingleProduct from "./ManageSingleProduct";
 import Modal from "../Modal";
+import useProducts from "@/hooks/swr/useProducts";
 
-const ManageProductsTable = ({ products }) => {
+const AllProductsTable = () => {
+  const { products, error, isLoading, isValidating, mutate } = useProducts();
+
   const modalRef = useRef(null);
-  const [isPending, startTransition] = useTransition();
-  const router = useRouter();
-
   const [updateData, setUpdateData] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const isLoading = isPending || loading;
 
   // Open Modal
   const openModal = (product) => {
@@ -37,8 +34,6 @@ const ManageProductsTable = ({ products }) => {
     const data = { title, price, category };
 
     if (title && price && category) {
-      setLoading(true);
-
       try {
         const res = await fetch(
           `http://localhost:5000/products/${updateData?.id}`,
@@ -52,14 +47,10 @@ const ManageProductsTable = ({ products }) => {
         );
         const result = await res.json();
         console.log(result);
+        mutate();
         form.reset();
-        setLoading(false);
         closeModal();
-        startTransition(() => {
-          router.refresh();
-        });
       } catch (error) {
-        setLoading(false);
         console.log(error);
       }
     }
@@ -67,49 +58,52 @@ const ManageProductsTable = ({ products }) => {
 
   // Delete Product
   const handleDeleteProduct = async (id) => {
-    setLoading(true);
     try {
       const res = await fetch(`http://localhost:5000/products/${id}`, {
         method: "DELETE",
       });
       const result = await res.json();
       console.log(result);
-      setLoading(false);
-      startTransition(() => {
-        router.refresh();
-      });
+      mutate();
     } catch (error) {
-      setLoading(false);
       console.log(error);
     }
   };
 
   return (
     <>
-      <table
-        className={`border-collapse border border-slate-500 w-full text-center mt-5 ${
-          isLoading ? "opacity-50" : "opacity-100"
-        }`}
-      >
-        <thead>
-          <tr>
-            <th className="border border-slate-600">Title</th>
-            <th className="border border-slate-600">Price</th>
-            <th className="border border-slate-600">Category</th>
-            <th className="border border-slate-600">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <ManageSingleProduct
-              key={product.id}
-              product={product}
-              openModal={openModal}
-              handleDeleteProduct={handleDeleteProduct}
-            />
-          ))}
-        </tbody>
-      </table>
+      {isLoading && (
+        <div>
+          <h1 className="text-center font-semibold text-2xl">Loading...</h1>
+        </div>
+      )}
+
+      {!isLoading && (
+        <table
+          className={`border-collapse border border-slate-500 w-full text-center mt-5 ${
+            isValidating ? "opacity-50" : "opacity-100"
+          }`}
+        >
+          <thead>
+            <tr>
+              <th className="border border-slate-600">Title</th>
+              <th className="border border-slate-600">Price</th>
+              <th className="border border-slate-600">Category</th>
+              <th className="border border-slate-600">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product) => (
+              <ManageSingleProduct
+                key={product.id}
+                product={product}
+                openModal={openModal}
+                handleDeleteProduct={handleDeleteProduct}
+              />
+            ))}
+          </tbody>
+        </table>
+      )}
       <Modal
         ref={modalRef}
         closeModal={closeModal}
@@ -120,4 +114,4 @@ const ManageProductsTable = ({ products }) => {
   );
 };
 
-export default ManageProductsTable;
+export default AllProductsTable;
